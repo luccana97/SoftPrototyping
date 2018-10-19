@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {font-family: "Lato", sans-serif;}
+
+.tablink {
+    background-color: #555;
+    color: white;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    font-size: 17px;
+    width: 25%;
+}
+
+.tablink:hover {
+    background-color: #777;
+}
+
+/* Style the tab content */
+.tabcontent {
+    color: white;
+    display: none;
+    padding: 50px;
+    text-align: center;
+}
+
+#London {background-color:red;}
+#Paris {background-color:green;}
+#Tokyo {background-color:blue;}
+#Oslo {background-color:orange;}
+</style>
+</head>
+<body>
+
+<div id="Week 1" class="tabcontent">
+  <h1>Week 1</h1>
+  <p>Inflatables</p>
+</div>
+
+<div id="Week 2" class="tabcontent">
+  <h1>Week 2</h1>
+  <p>?????</p> 
+</div>
+
+<div id="Week 3" class="tabcontent">
+  <h1>Week 3</h1>
+  <p>?????</p>
+</div>
+
+<div id="Week 4" class="tabcontent">
+  <h1>Week 4</h1>
+  <p>?????</p>
+</div>
+
+<button class="tablink" onclick="openCity('Week 1', this, 'red')" id="defaultOpen">Week 1</button>
+<button class="tablink" onclick="openCity('Week 2', this, 'green')">Week 2</button>
+<button class="tablink" onclick="openCity('Week 3', this, 'blue')">Week 3</button>
+<button class="tablink" onclick="openCity('Week 4', this, 'orange')">Week 4</button>
+
+<script>
+function openCity(cityName,elmnt,color) {
+    var i, tabcontent, tablinks;
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+    }
+    tablinks = document.getElementsByClassName("tablink");
+    for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].style.backgroundColor = "";
+    }
+    document.getElementById(cityName).style.display = "block";
+    elmnt.style.backgroundColor = color;
+
+}
+// Get the element with id="defaultOpen" and click on it
+document.getElementById("defaultOpen").click();
+</script>
+     
+</body>
+</html> 
